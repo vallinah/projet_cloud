@@ -1,0 +1,63 @@
+<?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\WalletController;
+
+Route::get('/', function () {
+    return view('user.auth.login');
+});
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function () {
+        return view('user.auth.login');
+    })->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::get('/register', function () {
+        return view('user.auth.register');
+    })->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+
+    Route::get('/validate-registration', function () {
+        return view('user.auth.validate-register');
+    })->name('user.validate-register');
+    Route::post('/validate-registration', [AuthController::class, 'validateRegistration'])->name('validate-registration');
+
+    Route::get('/pin-code', function () {
+        return view('user.auth.pin-code');
+    })->name('pin-code');
+    Route::post('/check-pin-code', [AuthController::class, 'checkPinCode'])->name('check-pin-code');
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user', action: function () {
+        return view('user.acceuil.home', ['title' => 'Acceuil']);
+    })->name('home');
+
+    Route::get('/crypto/prices', function () {
+        return view('crypto/prices');
+    })->name('crypto.prices');
+
+    Route::get('api/crypto/prices', [App\Http\Controllers\Api\CryptoPriceController::class, 'getCurrentPrices']);
+
+    Route::get('/profile', [ProfileController::class, 'get_profil_user_by_Id'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/portofilo', [PortfolioController::class, 'index'])->name('portofilo');
+
+    Route::prefix('wallet')->group(function () {
+        Route::get('/', [WalletController::class, 'index'])->name('user.wallet.index');
+        Route::get('/deposit', [WalletController::class, 'deposit'])->name('deposit');
+        Route::post('/withdraw', [WalletController::class, 'withdraw'])->name('withdraw');
+        Route::get('/validate/{code}', [WalletController::class, 'validateTransaction'])->name('validate');
+    });
+
+
+    Route::get('/logout', function () {
+        session()->flush();
+        return redirect()->route('login');
+    })->name('logout');
+});
