@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('profile') }}">
                         <i class="bi bi-circle"></i><span>Edit profil</span>
                     </a>
                 </li>

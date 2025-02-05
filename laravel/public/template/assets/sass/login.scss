@@ -1,4 +1,11 @@
-$theme_color1:#00113D;
+@charset "UTF-8";
+@font-face {
+  font-family: "Quicksand";
+  src: url("./../font/quicksand/quicksand-v31-latin-500.woff2") format("woff2"), url("./../font/quicksand/quicksand-v31-latin-regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+$theme_color1:rgb(1, 12, 48);
 $theme_color2:#ffd500;
 $theme_color3:rgb(255, 255, 255);
 $form-div-w:55%;
@@ -6,7 +13,7 @@ $form-login-w:50%;
 $form-sign-w:70%;
 $input-height:25px;
 
-$form-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$form-font: "Quicksand", sans-serif;
 
 @mixin formulaire(){
     @content;
@@ -127,9 +134,8 @@ html,body{
     margin: 0; /* Supprime les marges par défaut du body */
     padding: 0; /* Supprime les paddings par défaut */
     overflow-x:hidden;
-    background-color: $theme_color1;
+    background: linear-gradient(to bottom,$theme_color1, #2C085D);
     width: 100%;
-
 }
 
 
@@ -217,6 +223,9 @@ html,body{
         color:$theme_color3;
         font-family: $form-font;
         padding: 0.25cm;
+    }
+    input::-webkit-calendar-picker-indicator{
+        filter: invert(1);
     }
 }
 

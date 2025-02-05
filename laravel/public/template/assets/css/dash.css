@@ -120,7 +120,7 @@
   width: 100%;
   min-width: 900px;
   border-collapse: separate !important;
-  border-spacing: 0 20px;
+  border-spacing: 0 5px;
   border: none !important;
   color: white;
   text-align: center;
@@ -140,7 +140,8 @@
   color: #00113D;
   border: none !important;
   background-color: rgb(255, 255, 255);
-  height: 4cm;
+  min-height: 2cm;
+  max-height: 2cm;
 }
 .classement table tbody td {
   width: 200px !important;
@@ -149,11 +150,8 @@
 }
 .classement table tbody td canvas {
   align-self: center !important;
-  width: 200px;
-  height: 100%;
-}
-.classement table tbody tr td {
-  border-left: 3px #00113D solid;
+  min-width: 500px;
+  max-height: 3cm;
 }
 .classement table tbody tr td:first-child {
   border-left: none;
@@ -181,6 +179,67 @@
   background: #ffd500; /* Couleur de la barre de défilement */
 }
 
+@media screen and (min-width: 1200px) {
+  .classement {
+    width: 80%;
+    min-height: max-content;
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .classement table {
+    margin-bottom: 0.25cm;
+    border-radius: 10px;
+    padding: 0.25cm;
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate !important;
+    border-spacing: 0 5px;
+    border: none !important;
+    color: white;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+  }
+  .classement table thead {
+    margin-bottom: 1cm;
+    height: 1.5cm;
+  }
+  .classement table thead tr {
+    border-radius: 10px !important;
+    background-color: #357ABD;
+    padding-inline-end: 0.25cm;
+  }
+  .classement table tbody tr {
+    width: 100%;
+    color: #00113D;
+    border: none !important;
+    background-color: rgb(255, 255, 255);
+    min-height: 2cm;
+    max-height: 2cm;
+  }
+  .classement table tbody td {
+    width: 200px !important;
+    align-items: center;
+    height: 100%;
+  }
+  .classement table tbody td canvas {
+    align-self: center !important;
+    min-width: 500px;
+    max-height: 3cm;
+  }
+  .classement table tbody tr td:first-child {
+    border-left: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .classement table tbody tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
 @media screen and (max-width: 450px) {
   #page {
     width: 95%;
@@ -242,7 +301,7 @@
   }
   .chart canvas {
     width: 90% !important;
-    height: auto !important;
+    max-height: 5cm !important;
     background-color: white;
     border-radius: 20px;
     padding: 0.25cm;
@@ -257,46 +316,52 @@
     overflow-x: auto;
   }
   .classement table {
+    font-size: xx-small;
     border-radius: 10px;
-    padding: 0.25cm;
+    padding: 0cm;
     background-color: rgba(255, 255, 255, 0);
     width: 100%;
     min-width: 500px;
     border-collapse: separate !important;
-    border-spacing: 0 10px;
+    border-spacing: 0 2px;
     border: none !important;
     color: white;
     text-align: center;
     font-family: "Quicksand", sans-serif;
   }
+  .classement table thead tr {
+    font-size: xx-small;
+    padding: 0;
+    max-height: 0.75cm;
+  }
   .classement table tbody tr {
     width: 100%;
-    color: white;
     border: none !important;
-    background-color: rgba(255, 255, 255, 0);
-    height: 1cm;
+    background-color: rgb(255, 255, 255);
+    min-height: 1.5cm;
+    max-height: 1.5cm;
   }
   .classement table tbody td {
     width: 200px !important;
     align-items: center;
     height: 100%;
+    font-size: xx-small;
   }
   .classement table tbody td canvas {
     align-self: center !important;
-    width: auto;
-    height: min-content;
-  }
-  .classement table tbody tr td {
-    border-left: none;
+    max-width: auto;
+    max-height: 1.5cm;
+    font-size: xx-small;
   }
   .classement table tbody tr td:first-child {
     border-left: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
   .classement table tbody tr td:last-child {
     background-color: white;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 @media screen and (min-width: 450px) and (max-width: 1200px) {
@@ -334,6 +399,46 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .chart canvas {
+    min-width: 250px;
+    max-height: 10cm;
+  }
+  .classement {
+    width: 80%;
+  }
+  .classement table {
+    font-size: small;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    min-width: 500px;
+    border-collapse: separate !important;
+    border-spacing: 0 5px;
+  }
+  .classement table thead tr {
+    font-size: small;
+  }
+  .classement table tbody tr {
+    width: 100%;
+    border: none !important;
+    background-color: rgb(255, 255, 255);
+    height: 1cm;
+  }
+  .classement table tbody td {
+    width: 200px !important;
+    align-items: center;
+    height: 100%;
+    font-size: small;
+  }
+  .classement table tbody td canvas {
+    align-self: center !important;
+    max-height: 3cm;
+    font-size: small;
+  }
+  .classement table tbody tr td {
+    font-size: xx-small;
+    border-left: none;
   }
 }
 

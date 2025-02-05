@@ -53,13 +53,18 @@ $menu_width:250px;
     }
     @media screen and (max-width:450px){    
         header{
-            background-color:white;
-            min-height: 1.3cm;
+            background-color:rgb(255, 255, 255);
+            min-height: 1cm;
+            max-height: 1cm;
             .logo{
+                font-size: x-small;
                 width: 80%;
                 height: 90%;
                 color: $theme_color1;
                 justify-content: flex-start;
+                img{
+                    @include setImage(0.75cm);
+                }
                 #s_menu{
                     padding-right: 20%;
                     margin-left: 5%;
@@ -77,6 +82,9 @@ $menu_width:250px;
                     span{
                         display: none;
                     }
+                    img{
+                        @include setImage(0.75cm);
+                    }
                 }
                 #menu{
                     display: none;
@@ -91,11 +99,13 @@ $menu_width:250px;
             }
             ul{
                 top:1cm;
-                background-color: $theme_color3;
+                background-color: white;
+                border-radius:5px ;
                 li{
                     padding: 0 0.5cm 0 0.5cm;
                     font-weight: lighter;
                     border-radius:0px ;
+                    font-size: x-small;
                 }
             }
         }
@@ -111,7 +121,10 @@ $menu_width:250px;
                 align-self: self-start;
             }
         }
-
+        footer{
+            max-height:1cm;
+            font-size: xx-small;            
+        }
     }
     @media  screen and (min-width:450px) and (max-width:1200px) {
         header{
@@ -178,7 +191,8 @@ body::-webkit-scrollbar {
   }
 body{
     overflow-y: auto;
-    background-color: $theme_color1;
+    background: linear-gradient(to bottom,$theme_color1, #2C085D);
+    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -356,11 +370,12 @@ body{
         }
         .contains{
             display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
+            flex-direction: row;
+            flex-wrap: wrap;
             width: calc(100% - 250px);
             max-height: 100%;
             gap: 0.25cm;
+            justify-content: center;
             align-items: center;
             overflow-y: auto;
             overflow-x: hidden;
@@ -390,12 +405,14 @@ body{
 footer{
     display: block;
     width: 100%;
+    max-height: $h-header;
     min-height: $h-header;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
+    font-size: medium;
     div{
         max-height: 80%;
         min-height: 60%;
@@ -408,7 +425,6 @@ footer{
         gap:1px;
         p{
             font-family:"Quicksand",sans-serif;
-            font-size: medium;
             margin:0;
         }
     }

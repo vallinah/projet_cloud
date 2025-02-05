@@ -1,11 +1,17 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Quicksand";
+  src: url("./../font/quicksand/quicksand-v31-latin-500.woff2") format("woff2"), url("./../font/quicksand/quicksand-v31-latin-regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 html, body {
   min-width: 350px;
   height: 100%; /* Définit la hauteur à 100% pour html et body */
   margin: 0; /* Supprime les marges par défaut du body */
   padding: 0; /* Supprime les paddings par défaut */
   overflow-x: hidden;
-  background-color: #00113D;
+  background: linear-gradient(to bottom, rgb(1, 12, 48), #2C085D);
   width: 100%;
 }
 
@@ -111,7 +117,7 @@ html, body {
 .form-login form .index {
   align-self: center;
   color: #ffd500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 .form-login form button {
   margin-top: 25px;
@@ -125,13 +131,13 @@ html, body {
   padding: 0.5cm;
 }
 .form-login form button:hover {
-  box-shadow: 0 0 6px #00113D;
+  box-shadow: 0 0 6px rgb(1, 12, 48);
   cursor: pointer;
 }
 .form-login .link {
   justify-self: center;
   font-size: x-small;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
   padding-bottom: 5%;
 }
 
@@ -163,7 +169,7 @@ html, body {
 .form-sign form .index {
   align-self: center;
   color: #ffd500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 .form-sign form button {
   margin-top: 25px;
@@ -177,13 +183,13 @@ html, body {
   padding: 0.5cm;
 }
 .form-sign form button:hover {
-  box-shadow: 0 0 6px #00113D;
+  box-shadow: 0 0 6px rgb(1, 12, 48);
   cursor: pointer;
 }
 .form-sign .link {
   justify-self: center;
   font-size: x-small;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
   padding-bottom: 5%;
 }
 
@@ -232,12 +238,15 @@ html, body {
 }
 .form-control input {
   border: none;
-  background-color: #00113D;
+  background-color: rgb(1, 12, 48);
   height: 25px;
   border-radius: 7px;
   color: rgb(255, 255, 255);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
   padding: 0.25cm;
+}
+.form-control input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 .key-form {
@@ -253,10 +262,10 @@ html, body {
   width: 1cm;
   height: 1cm;
   border: none;
-  background-color: #00113D;
+  background-color: rgb(1, 12, 48);
   border-radius: 7px;
   color: rgb(255, 255, 255);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
   text-align: center;
   font-size: xx-large;
 }
@@ -264,7 +273,7 @@ html, body {
 .submit {
   background-color: #ffd500;
   color: rgb(255, 255, 255);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 button {

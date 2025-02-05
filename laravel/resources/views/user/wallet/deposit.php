@@ -1,4 +1,3 @@
-}
 @extends('user.layout.layout-user')
 
 @section('content')

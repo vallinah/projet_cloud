@@ -17,6 +17,7 @@ $theme_color3:rgb(0, 0, 0);
 @mixin responsive(){
     @content;
     @media screen and (min-width:1200px) {
+        
     }
     @media screen and (max-width:450px){
             #page{
@@ -79,7 +80,7 @@ $theme_color3:rgb(0, 0, 0);
                 align-items: center;
                 canvas{
                     width:  90% !important;
-                    height:  auto !important;
+                    max-height:  5cm !important;
                     background-color: white;
                     border-radius: 20px;
                     padding: 0.25cm;
@@ -94,50 +95,53 @@ $theme_color3:rgb(0, 0, 0);
                 align-items: center;
                 overflow-x: auto;
                 table{
+                    font-size: xx-small;
                     border-radius:10px ;        
-                    padding: 0.25cm;
+                    padding: 0cm;
                     background-color: #ffffff00;
                     width: 100%;
                     min-width: 500px;
                     border-collapse: separate !important;
-                    border-spacing: 0 10px;
+                    border-spacing: 0 2px;
                     border: none !important;
                     color: white;
                     text-align: center;
                     font-family: 'Quicksand', sans-serif;
-                    thead{
-                        // margin-bottom: ;
-                        // height: 1.5cm;
+                    thead tr{
+                        font-size: xx-small;
+                        padding:0;
+                        max-height: 0.75cm;
                     }
                     tbody{
                         tr{
                             width: 100%;
-                            color: white;
+                            // color: white;
                             border: none !important;
-                            background-color: rgba(255, 255, 255, 0);
-                            height: 1cm;
+                            background-color: rgb(255, 255, 255);
+                            min-height: 1.5cm;
+                            max-height: 1.5cm;
                         }
                         td{
                             width: 200px !important;
                             align-items: center;
                             height: 100%;
+                            font-size: xx-small;
                             canvas{
                                 align-self: center !important;
-                                width: auto;
-                                height:min-content;
+                                max-width: auto;
+                                max-height:1.5cm;
+                                font-size: xx-small;
                             }
-                        }
-                        tr td{
-                            border-left:none;
                         }
                         tr td:first-child{
                             border-left: none;
-                            border-top-left-radius: 10px;
-                            border-bottom-left-radius: 10px;
+                            border-top-left-radius: 5px;
+                            border-bottom-left-radius: 5px;
                         }
                         tr td:last-child{
                             background-color: white;
-                            border-radius: 5px;
+                            border-top-right-radius: 5px;
+                            border-bottom-right-radius: 5px;
                         }
                     }
             
@@ -181,8 +185,53 @@ $theme_color3:rgb(0, 0, 0);
             justify-content: space-between;
         }
     }
+    .chart{
+        canvas{
+            min-width: 250px;
+            max-height: 10cm;
+        }
     }
-
+    .classement{
+        width: 80%;
+        table{
+            font-size: small;
+            border-radius:10px ;        
+            background-color: #ffffff00;
+            width: 100%;
+            min-width: 500px;
+            border-collapse: separate !important;
+            border-spacing: 0 5px;
+            thead tr{
+                font-size: small;
+            }
+            tbody{
+                tr{
+                    width: 100%;
+                    border: none !important;
+                    background-color: rgb(255, 255, 255);
+                    height: 1cm;
+                }
+                td{
+                    width: 200px !important;
+                    align-items: center;
+                    height: 100%;
+                    font-size: small;
+                    canvas{
+                        align-self: center !important;
+                        // min-width: auto;
+                        max-height:3cm;
+                        font-size: small;
+                    }
+                }
+                tr td{
+                    font-size: xx-small;
+                    border-left:none;
+                }
+            }
+    
+        }
+    }
+    }
 }
 
 @mixin tables(){
@@ -305,7 +354,7 @@ $theme_color3:rgb(0, 0, 0);
         width: 100%;
         min-width: 900px;
         border-collapse: separate !important;
-        border-spacing: 0 20px;
+        border-spacing: 0 5px;
         border: none !important;
         color: white;
         text-align: center;
@@ -326,7 +375,8 @@ $theme_color3:rgb(0, 0, 0);
                 color: $theme_color1;
                 border: none !important;
                 background-color: rgb(255, 255, 255);
-                height: 4cm;
+                min-height: 2cm;
+                max-height: 2cm;
             }
             td{
                 width: 200px !important;
@@ -334,13 +384,13 @@ $theme_color3:rgb(0, 0, 0);
                 height: 100%;
                 canvas{
                     align-self: center !important;
-                    width: 200px;
-                    height: 100%;
+                    min-width: 500px;
+                    max-height: 3cm;
                 }
             }
-            tr td{
-                border-left: 3px $theme_color1 solid;
-            }
+            // tr td{
+            //     border-left: 3px $theme_color1 solid;
+            // }
             tr td:first-child{
                 border-left: none;
                 border-top-left-radius: 10px;
