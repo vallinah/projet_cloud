@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q+UKOgzDywAoLBQaRC+0x/l6y6f20OZ/KF/Dbo1ks9oH1BCwVE36QzxeZopdQrg3rhaiEiF/b5nLonjM9kI01Q==",
+  "dgSpecHash": "N5j6dJckeTtspEiQ/fE3XFd6JydGjgHfweZLGa9WVhRW7RawOqs/DY3wuRa1vcyfp4Q1qOT6Ar8edz57fJyjJQ==",
   "success": true,
-  "projectFilePath": "D:\\ITU\\S5\\Web avancée\\Examen_Final_S5\\Examen_Final_S5\\projet-cloud-p16-dev\\AspNet\\AspNet.csproj",
+  "projectFilePath": "D:\\ITU\\S5\\examen_final\\projet_cloud\\AspNet\\AspNet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Otisoa Vallinah\\.nuget\\packages\\bouncycastle.cryptography\\2.5.0\\bouncycastle.cryptography.2.5.0.nupkg.sha512",
     "C:\\Users\\Otisoa Vallinah\\.nuget\\packages\\mailkit\\4.9.0\\mailkit.4.9.0.nupkg.sha512",

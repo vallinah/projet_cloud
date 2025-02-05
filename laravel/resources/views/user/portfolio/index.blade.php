@@ -1,3 +1,5 @@
+@extends('user.layout.layout-user')
+@section('content')
 <div class="contains">
     <h1 id="page">Mon Portefeuille Crypto</h1>
     <div class="dash">
@@ -31,7 +33,4 @@
 
     </div>
 </div>
-
-</body>
-
-</html>
+@endsection

@@ -2644,11 +2644,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITU\\S5\\Web avancée\\Examen_Final_S5\\Examen_Final_S5\\projet-cloud-p16-dev\\AspNet\\AspNet.csproj",
+      "projectUniqueName": "D:\\ITU\\S5\\examen_final\\projet_cloud\\AspNet\\AspNet.csproj",
       "projectName": "AspNet",
-      "projectPath": "D:\\ITU\\S5\\Web avancée\\Examen_Final_S5\\Examen_Final_S5\\projet-cloud-p16-dev\\AspNet\\AspNet.csproj",
+      "projectPath": "D:\\ITU\\S5\\examen_final\\projet_cloud\\AspNet\\AspNet.csproj",
       "packagesPath": "C:\\Users\\Otisoa Vallinah\\.nuget\\packages\\",
-      "outputPath": "D:\\ITU\\S5\\Web avancée\\Examen_Final_S5\\Examen_Final_S5\\projet-cloud-p16-dev\\AspNet\\obj\\",
+      "outputPath": "D:\\ITU\\S5\\examen_final\\projet_cloud\\AspNet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Otisoa Vallinah\\AppData\\Roaming\\NuGet\\NuGet.Config"
