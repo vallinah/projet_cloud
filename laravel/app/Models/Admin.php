@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
 
@@ -14,14 +14,14 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'admin';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'admin_id';
 
     /**
      * The "type" of the primary key ID.
@@ -43,12 +43,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'login',
         'email',
         'password',
-        'date_of_birth',
-        'is_valid',
     ];
 
     /**
@@ -59,21 +56,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'date_of_birth' => 'date',
-        'created_date' => 'datetime',
-        'is_valid' => 'boolean',
-    ];
-
-    public function cryptos()
-    {
-        return $this->belongsToMany(Cryptocurrency::class, 'user_crypto', 'user_id', 'crypto_id')
-            ->withPivot('quantity');
-    }
 }

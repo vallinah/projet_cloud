@@ -9,9 +9,9 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        
+
         $title = "Mon Portfolio"; // Définir le titre
-    
+
         $wallets = CryptoWallet::with('cryptocurrency')
             ->where('user_id', Auth::id())
             ->get()
@@ -27,6 +27,6 @@ class PortfolioController extends Controller
 
         $total_portfolio_value = $wallets->sum('total_value');
 
-        return view('user.portfolio.index', compact('title','wallets', 'total_portfolio_value'));
+        return view('user.portfolio.index', compact('title', 'wallets', 'total_portfolio_value'));
     }
 }
