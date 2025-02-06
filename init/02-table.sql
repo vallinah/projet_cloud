@@ -103,6 +103,7 @@ CREATE TABLE mouvement_fond(
    date_mouvement_fond TIMESTAMP,
    montant_depot NUMERIC(18,2)  ,
    user_id VARCHAR(50)  NOT NULL,
+   is_valid BOOLEAN NOT NULL,
    PRIMARY KEY(id_mouvement_fond),
    FOREIGN KEY(user_id) REFERENCES users(user_id)
 );

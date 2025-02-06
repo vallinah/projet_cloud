@@ -4,12 +4,26 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\WalletController;
+use App\Http\Controllers\VenteController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AchatController;
+use App\Http\Controllers\DepotController;
+use App\Http\Controllers\RetraitController;
+use App\Http\Controllers\OperationController;
 
+// Route::get('/', function () {
+//     return view('user.auth.login');
+// });
 Route::get('/', function () {
-    return view('user.auth.login');
+    return view('guest.index');
 });
 
 Route::middleware(['guest'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.auth.login');
+    })->name('admin');
+    Route::post('/admin', [AdminController::class, 'login'])->name('admin');
+
     Route::get('/login', function () {
         return view('user.auth.login');
     })->name('login');
@@ -29,6 +43,24 @@ Route::middleware(['guest'])->group(function () {
         return view('user.auth.pin-code');
     })->name('pin-code');
     Route::post('/check-pin-code', [AuthController::class, 'checkPinCode'])->name('check-pin-code');
+
+    Route::get('/admin/ventes', [VenteController::class, 'index'])->name('ventes');
+    Route::post('/admin/ventes/valider/{id}', [VenteController::class, 'validerVente'])->name('ventes.valider');
+
+    Route::get('/admin/achats', [AchatController::class, 'index'])->name('achats');
+    Route::post('/admin/achats/valider/{id}', [AchatController::class, 'validerAchat'])->name('achats.valider');
+
+
+    Route::get('/admin/depots', [DepotController::class, 'index'])->name('depots');
+    Route::post('/admin/depots/valider/{id}', [DepotController::class, 'validerDepot'])->name('depots.valider');
+
+    Route::get('/admin/retraits', [RetraitController::class, 'index'])->name('retraits');
+    Route::post('/admin/retraits/valider/{id}', [RetraitController::class, 'validerRetrait'])->name('retraits.valider');
+
+    Route::get('/admin/operations', [OperationController::class, 'index'])->name('operations');
+    Route::get('/admin/operations/user/{id}', [OperationController::class, 'get_by_id'])->name('operations.user');
+
+
 });
 
 
@@ -36,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', action: function () {
         return view('user.acceuil.home', ['title' => 'Acceuil']);
     })->name('home');
+
+
 
     Route::get('/crypto/prices', function () {
         return view('crypto/prices');

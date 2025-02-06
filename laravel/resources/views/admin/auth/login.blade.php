@@ -19,7 +19,7 @@
                     @endforeach
                 </div>
             @endif
-            <form action="{{ route('login') }}" class="" method="POST">
+            <form action="{{ route('admin') }}" class="" method="POST">
                 @csrf
                 <p class="index">Connexion</p>
                 <div class="form-control">

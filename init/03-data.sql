@@ -42,3 +42,31 @@ VALUES
 ('USE-00001', 'CRY-00003', 3.45678901), -- Litecoin
 ( 'USE-00001', 'CRY-00004', 4.56789012), -- Cardano
 ( 'USE-00001', 'CRY-00005', 5.67890123); -- Ripple
+
+INSERT INTO admin(login,email,password) values('admin','admin@gmail.com','admin');
+
+-- Exemple de données pour la table mouvement_crypto
+INSERT INTO mouvement_crypto (nombre, cours, vente, achat, crypto_id, user_id, date_mouvement, is_valid)
+VALUES
+  (0.5000000, 53390.96, 1, 0, 'CRY-00001', 'USE-00001', '2025-02-06 10:00:00', FALSE),  -- Vente de Bitcoin
+  (1.2000000, 641.11, 0, 1, 'CRY-00002', 'USE-00001', '2025-02-06 11:30:00', FALSE),  -- Achat d'Ethereum
+  (0.1000000, 0.182338, 1, 0, 'CRY-00006', 'USE-00001', '2025-02-06 12:45:00', FALSE),  -- Vente de Ripple
+  (3.5000000, 307.67, 0, 1, 'CRY-00003', 'USE-00001', '2025-02-06 14:00:00', FALSE),  -- Achat de Binance Coin
+  (2.0000000, 0.611282, 1, 0, 'CRY-00004', 'USE-00001', '2025-02-06 15:15:00', FALSE);  -- Vente de Cardano
+
+INSERT INTO mouvement_fond (montant_depot, date_mouvement_fond, montant_retrait, user_id, is_valid)
+VALUES
+(500.00, '2024-02-05 10:15:00', NULL, 'USE-00001',FALSE),
+(1000.00, '2024-02-05 12:30:00', NULL, 'USE-00001',FALSE),
+(250.50, '2024-02-06 08:45:00', NULL, 'USE-00001',FALSE),
+(750.00, '2024-02-06 14:20:00', NULL, 'USE-00001',FALSE),
+(1200.75, '2024-02-07 09:10:00', NULL, 'USE-00001',FALSE);
+
+INSERT INTO mouvement_fond (montant_retrait, date_mouvement_fond, montant_depot, user_id, is_valid)
+VALUES
+(200.00, '2024-02-05 11:00:00', NULL, 'USE-00001',FALSE),
+(500.00, '2024-02-05 13:15:00', NULL, 'USE-00001',FALSE),
+(100.75, '2024-02-06 09:30:00', NULL, 'USE-00001',FALSE),
+(350.00, '2024-02-06 16:00:00', NULL, 'USE-00001',FALSE),
+(900.00, '2024-02-07 10:45:00', NULL, 'USE-00001',FALSE);
+

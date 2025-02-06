@@ -29,9 +29,24 @@ namespace Aspnet.Controllers
 
             if (admin == null)
             {
-                return Unauthorized("Login ou mot de passe incorrect.");
+                Console.WriteLine($"tsa misy admin hita oooo");
+                return NotFound(new
+                {
+                    status = "error",
+                    message = "Admin non trouvé"
+                });
             }
-            return Ok("Authentification réussie.");
+
+            Console.WriteLine($"valeur: {admin.Login}, {admin.Password}");
+            return Ok(new
+            {
+                status = "success",
+                data = new
+                {
+                    adminId = admin.AdminId,
+                    login = admin.Login,
+                }
+            });
         }
     }
 }
